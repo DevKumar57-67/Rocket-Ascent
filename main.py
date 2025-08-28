@@ -14,10 +14,16 @@ if __name__ == '__main__':
 
 from flask import Flask, render_template, request
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend
 import matplotlib.pyplot as plt
 import os
 
 app = Flask(__name__)
+
+# Create static directory if it doesn't exist
+if not os.path.exists('static'):
+    os.makedirs('static')
 
 # Route for homepage
 @app.route("/", methods=["GET", "POST"])

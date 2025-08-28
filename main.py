@@ -85,3 +85,7 @@ def index():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+
+# The Software uses Physics, Mathematics and Computer Science to simulate the flight of a rocket in Space. 

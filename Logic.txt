@@ -1,0 +1,59 @@
+This file contains the logic involved in making this Software
+
+The complex Physics, Maths and Computing is explained simply here 
+
+# LOGIC
+THE PROBLEM FIRST- 
+We want to make a rocket simulation System for a one Dimensional Rocket Ascent. So to keep the things practical and as the real simulation System works we need to keep Physics and Mathematics tangled with Computer Science. 
+
+THE SOFTWARE SYSTEM-
+I want the software should be programmed like this it should ask for some parameters like Rocket Weight, Thrust, Timei step and Time required for Ascent of the Rocket and then predict the Rocket Data like velocity, acceleration and altitude and plot their curves. Although this is just a beginner thing because the real System do a lot more things. This System only works for a one Dimensional Rocket Ascent. 
+
+So for finding the above Data with the above parameters we have to bring the Physics involving these parameters
+
+THE PHYSICS -
+
+In the Physics part the heart of aerospace engineering are the Newton's Laws of Motion which everyone knows. I will just write them mathematically in the maths part. 
+
+THE MATHEMATICS - 
+
+If the Physics is heart of aerospace engineering then the mathematical part is like the heartbeat of aerospace engineering.We will frame the equations of Physics mathematically. 
+
+       F = ma 
+       a = F/m
+
+Because we have Thrust as force so we will be extending the equation further. we get
+
+       a = T - mg/m
+      
+This will give us the acceleration but because when the rocket goes in space it's position will keep changing and here comes the differential Equations in the picture. 
+
+So for acceleration, 
+
+      a = dv/dt
+
+Solving on time (t)
+      v = at (Now for different values of t the v varies)
+
+So we got acceleration and velocity which varies with t time. 
+Now we want the altitude as well. 
+So altitude is distance and we know that from velocity to distance we can do it by integrating velocity with proler limits as a function of time t.
+
+So, 
+
+      x(t) = I=∫(0 to t) ​f(v)dt
+
+Now this equation exactly calclutes the altitude of the Rocket Ascent. In 0 to T time where T can be any input from user as per the requirement.
+
+
+THE COMPUTER SCIENCE-
+
+Now we need to Frame all the equations in python code because if the parameters became very big as the actual rockets have calculating them from hands is a bizzare decision so we will give the leave the computing task for python. 
+
+THE FLASK WEB INTWERFACE-
+
+After the completion of the system we wnat to make it the form of an application so we can just add a basic flask interface and integrate the model in it.
+
+
+# TEST THE MODEL
+

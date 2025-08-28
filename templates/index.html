@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Rocket Ascent Simulator</title>
+    <title>Rockecent</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 40px; background: #f4f4f4; }
         .container { background: #fff; padding: 20px; border-radius: 10px; width: 600px; margin: auto; }
@@ -14,7 +14,12 @@
 </head>
 <body>
     <div class="container">
-        <h1>🚀 Rocket Ascent Simulator</h1>
+        <h1>🚀 RockeAscen</h1>
+        <h1> A Rocket Ascent Simulator </h1>
+        <h1>
+            <p> Enter the following parameters to see the data to Ascent a One Dimensional
+            Rocket in Space </p>
+        </h1>
         <form method="POST">
             <label>Initial Mass (kg):</label><br>
             <input type="number" step="any" name="mass" required><br>
@@ -34,9 +39,9 @@
         {% if result %}
         <div class="result">
             <h2>Results:</h2>
-            <p><b>Final Altitude:</b> {{ result.final_altitude }} m</p>
-            <p><b>Final Velocity:</b> {{ result.final_velocity }} m/s</p>
-            <p><b>Final Acceleration:</b> {{ result.final_acceleration }} m/s²</p>
+            <p><b>The Final Altitude of the Rocket:</b> {{ result.final_altitude }} m</p>
+            <p><b>The Final Velocity of the Rocket:</b> {{ result.final_velocity }} m/s</p>
+            <p><b>The Final Acceleration of the Rocket:</b> {{ result.final_acceleration }} m/s²</p>
             <img src="{{ url_for('static', filename='plot.png') }}" alt="Rocket Plot">
         </div>
         {% endif %}

@@ -1,48 +1,51 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Rockecent</title>
+    <title>RocketAscent</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 40px; background: #f4f4f4; }
-        .container { background: #fff; padding: 20px; border-radius: 10px; width: 600px; margin: auto; }
-        input { padding: 8px; margin: 5px; width: 95%; }
-        button { padding: 10px; background: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .container { background: #fff; padding: 20px; border-radius: 10px; max-width: 600px; margin: auto; }
+        h1 { color: #333; text-align: center; }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        input { padding: 8px; margin: 5px 0; width: 95%; border: 1px solid #ddd; border-radius: 4px; }
+        button { padding: 10px 20px; background: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 15px; width: 100%; }
         button:hover { background: #0056b3; }
-        .result { margin-top: 20px; }
+        .result { margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 5px; }
+        .result h2 { color: #333; }
+        .result p { margin: 8px 0; }
         img { margin-top: 20px; width: 100%; border: 1px solid #ccc; border-radius: 10px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🚀 RockeAscen</h1>
-        <h1> A Rocket Ascent Simulator </h1>
-        <h1>
-            <p> Enter the following parameters to see the data to Ascent a One Dimensional
-            Rocket in Space </p>
-        </h1>
+        <h1>🚀 RocketAscent</h1>
+        <h2>A Rocket Ascent Simulator</h2>
+        <p>Enter the following parameters to simulate a one-dimensional rocket ascent in space:</p>
+        
         <form method="POST">
-            <label>Initial Mass (kg):</label><br>
-            <input type="number" step="any" name="mass" required><br>
+            <label>Initial Mass (kg):</label>
+            <input type="number" step="any" name="mass" required>
             
-            <label>Thrust (N):</label><br>
-            <input type="number" step="any" name="thrust" required><br>
+            <label>Thrust (N):</label>
+            <input type="number" step="any" name="thrust" required>
             
-            <label>Burn Time (s):</label><br>
-            <input type="number" step="any" name="burn_time" required><br>
+            <label>Burn Time (s):</label>
+            <input type="number" step="any" name="burn_time" required>
             
-            <label>Time Step (s):</label><br>
-            <input type="number" step="any" name="dt" required><br>
+            <label>Time Step (s):</label>
+            <input type="number" step="any" name="dt" value="0.1" required>
             
-            <button type="submit">Simulate</button>
+            <button type="submit">Simulate Rocket Flight</button>
         </form>
 
         {% if result %}
         <div class="result">
-            <h2>Results:</h2>
-            <p><b>The Final Altitude of the Rocket:</b> {{ result.final_altitude }} m</p>
-            <p><b>The Final Velocity of the Rocket:</b> {{ result.final_velocity }} m/s</p>
-            <p><b>The Final Acceleration of the Rocket:</b> {{ result.final_acceleration }} m/s²</p>
-            <img src="{{ url_for('static', filename='plot.png') }}" alt="Rocket Plot">
+            <h2>Simulation Results:</h2>
+            <p><strong>Final Altitude:</strong> {{ result.final_altitude }} m</p>
+            <p><strong>Final Velocity:</strong> {{ result.final_velocity }} m/s</p>
+            <p><strong>Final Acceleration:</strong> {{ result.final_acceleration }} m/s²</p>
+            <img src="{{ url_for('static', filename='plot.png') }}" alt="Rocket Flight Data Plot">
         </div>
         {% endif %}
     </div>
